@@ -3,16 +3,15 @@ const fs = require("fs");
 let packages;
 let paper = 0;
 
-fs.readFile("input.txt", "utf8", (err, inputString) => {
+fs.readFile("./2015/02/input.txt", "utf8", (err, inputString) => {
   if (err) {
     throw err;
   }
-
-  packages = inputString.split("\r\n");
+  //packages = inputString.split("\r\n");
+  packages = inputString.split("\n")
   packages.forEach((gift, index) => {
     packages[index] = gift.split("x").map(x => parseInt(x));
   });
-  console.log(paper);
   packages.forEach(gift => {
     let A = gift[0] * gift[1];
     let B = gift[0] * gift[2];
