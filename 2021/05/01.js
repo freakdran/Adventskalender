@@ -67,8 +67,8 @@ function markVents(map, movement) {
     }
     map = markStraight(map,position,start,end, false)
   } else {
-    console.log("no straigt movement")
-    map = markDiagonally(map,movement[0],movement[2],movement[1], movement[3])
+    console.log(movement);
+    map = markDiagonally(map,parseInt(movement[0]),parseInt(movement[1]),parseInt(movement[2]), parseInt(movement[3]))
   }
   return map;
 }
@@ -80,16 +80,16 @@ function markStraight(map, position, start, end, vertical) {
 }
 
 function markDiagonally(map, startX, startY, endX,endY) {
+  console.log("sX: "+startX+" sY: "+startY+" eX: "+endX+" eY: "+endY)
   let direction =findDirection(startX, startY,endX, endY)
   console.log(direction)
   switch(direction) {
     case 'ul':;
-    case 'dr': 
-    map = moveUR(map,startX,startY,endX, endY);
+    case 'dr':
+    //map = moveDR(map,startX,startY,endX, endY);
     break;
     case 'ur':;
-    case 'dl':
-    map = moveUL(map, startY,startX,endX,endY);
+    case 'dl': map = moveUR(map, startX,startY,endX,endY)
     break;
     default: console.log('ERROR');
   }
@@ -97,6 +97,9 @@ function markDiagonally(map, startX, startY, endX,endY) {
 }
 
 function moveUR(map, startX, startY, endX, endY) {
+  console.log("UR")
+  console.log(startX + " " + endX)
+  console.log(startY + " " + endY)
   if(startX<endX) {
     let temp = startX
     startX=endX
@@ -107,13 +110,21 @@ function moveUR(map, startX, startY, endX, endY) {
   } 
   for(let i = startX; i >= endX; i--) {
     for(let j = startY; j <= endY; j++) {
-      map[i][j]++
+    for(let k = 0; k <= Math.abs(startX-endX); k++){
+        if(i+k === startX && j-k === startY) {
+          map[i][j]++
+        }
+      }
     }
   }
   return map
 }
 
-function moveUL(map, startX, startY, endX, endY) {
+function moveDR(map, startX, startY, endX, endY) {
+  console.log("DR")
+  console.log("unchanged")
+  console.log(startX + " " + endX)
+  console.log(startY + " " + endY)
   if(startX>endX) {
     let temp = startX
     startX=endX
@@ -122,9 +133,16 @@ function moveUL(map, startX, startY, endX, endY) {
     startY = endY
     endY = temp
   } 
+  console.log("changed")
+  console.log(startX + " " + endX)
+  console.log(startY + " " + endY)
   for(let i = startX; i <= endX; i++) {
     for(let j = startY; j <= endY; j++) {
-      map[i][j]++
+      for(let k = 0; k <= Math.abs(startX-endX); k++){
+        if(i+k === startX && j-k === startY) {
+          map[i][j]++
+        }
+      }
     }
   }
   return map
