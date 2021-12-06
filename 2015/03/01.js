@@ -10,6 +10,9 @@ fs.readFile("./2015/03/input.txt", "utf8", (err, inputString) => {
   }
 
   for (let i = 0; i < inputString.length; i++) {
+    if(!checkVisited()) {
+      visited.push(`${vertical} ${horizontal}`)
+    }
     switch (inputString[i]) {
       case "^":
        vertical++
@@ -27,18 +30,16 @@ fs.readFile("./2015/03/input.txt", "utf8", (err, inputString) => {
         console.log('err')
         return;
     }
-    visited.push(`${horizontal} ${vertical}`)
   }
-  console.log(visited)
-  for(let i =0;i<visited.length;i++) {
-    console.log("iteration")
-    for(let j = visited.length;j > i+1;j--) {
-      console.log(`-----\n${visited[i]}\n${visited[j]}`)
-      if(visited[i]==visited[j]) {
-        visited.splice(j)
-      }
-    }
-  }
-  console.log(visited)
-  console.log(visited.length);
+  console.log(visited.length)
 });
+
+function checkVisited() {
+  if(visited.length === 0) return false
+  let checkFor = `${vertical} ${horizontal}`
+  let alreadyVisited = false
+  for( let i =0; i<visited.length;i++) {
+    if(visited[i] === checkFor) alreadyVisited = true
+  }
+  return alreadyVisited
+}
