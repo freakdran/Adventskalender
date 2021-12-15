@@ -1,6 +1,9 @@
 {
   "name": "Adventskalender",
   "scripts": {
-      "start": "node ./2015/03/02"
-    }
+    "start": "node ./2015/03/02"
+  },
+  "dependencies": {
+    "a-star": "^0.2.0"
+  }
 }
