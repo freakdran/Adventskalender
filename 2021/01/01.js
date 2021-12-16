@@ -1,19 +1,14 @@
 const fs = require("fs");
 
-let scan;
 let numberOfIncreases = 0;
 
-fs.readFile("input.txt", "utf8", (err, inputString) => {
-  if (err) {
-    throw err;
-  }
-
-  scans = inputString.split("\r\n").map(function(singleScan) {
+let scans = fs
+  .readFileSync("input.txt", { encoding: "utf8" })
+  .split("\r\n")
+  .map(function(singleScan) {
     return parseInt(singleScan);
   });
-
-  countIncrease();
-});
+countIncrease();
 
 function countIncrease() {
   for (let a = 1; a < scans.length; a++) {
