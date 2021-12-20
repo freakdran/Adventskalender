@@ -22,7 +22,7 @@ function iterateNTimes(n, img) {
     img = enhanceImage(img);
     img = borderImage(img, img[0][0]);
   }
-  console.log(countLights(img));
+  console.log(`Lights after ${n} iterations: ${countLights(img)}`);
 }
 
 function enhanceImage(img) {
