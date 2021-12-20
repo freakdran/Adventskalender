@@ -16,10 +16,10 @@
 [x] [Day 14](https://github.com/freakdran/Adventskalender/tree/master/2021/14)<br>
 [x] [Day 15](https://github.com/freakdran/Adventskalender/tree/master/2021/15)<br>
 [x] [Day 16](https://github.com/freakdran/Adventskalender/tree/master/2021/16)<br>
-[ ] [Day 17](https://github.com/freakdran/Adventskalender/tree/master/2021/17)<br>
-[ ] [Day 18](https://github.com/freakdran/Adventskalender/tree/master/2021/18)<br>
+[x] [Day 17](https://github.com/freakdran/Adventskalender/tree/master/2021/17)<br>
+[x] [Day 18](https://github.com/freakdran/Adventskalender/tree/master/2021/18)<br>
 [ ] [Day 19](https://github.com/freakdran/Adventskalender/tree/master/2021/19)<br>
-[ ] [Day 20](https://github.com/freakdran/Adventskalender/tree/master/2021/20)<br>
+[x] [Day 20](https://github.com/freakdran/Adventskalender/tree/master/2021/20)<br>
 [ ] [Day 21](https://github.com/freakdran/Adventskalender/tree/master/2021/21)<br>
 [ ] [Day 22](https://github.com/freakdran/Adventskalender/tree/master/2021/22)<br>
 [ ] [Day 23](https://github.com/freakdran/Adventskalender/tree/master/2021/23)<br>
